@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maruti Industrial Services — Manpower &amp; Security Solutions</title>
+<style>
+  :root{
+    --ink:#1a2130;
+    --steel:#3d4759;
+    --paper:#eef0ed;
+    --panel:#ffffff;
+    --line:#d7dbd4;
+    --signal:#c65a2e;
+    --signal-dark:#a3471f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.5;
+  }
+  h1,h2,h3{
+    font-family: 'Iowan Old Style','Georgia','Times New Roman', serif;
+    font-weight:700;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 32px;}
+
+  /* Header */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:20px 32px;
+  }
+  .brand{
+    display:flex; align-items:center; gap:12px;
+    font-family:'Iowan Old Style','Georgia',serif;
+    font-weight:700; font-size:20px;
+  }
+  .brand-mark{
+    width:34px; height:34px;
+    background:var(--ink);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--paper); font-size:16px; font-weight:700;
+    flex-shrink:0;
+  }
+  nav.links{display:flex; gap:32px; font-size:15px;}
+  nav.links a{text-decoration:none; color:var(--steel);}
+  nav.links a:hover{color:var(--ink);}
+
+  /* Hero */
+  .hero{
+    padding:88px 32px 72px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-inner{max-width:1080px; margin:0 auto; display:grid; grid-template-columns:1.3fr 1fr; gap:56px; align-items:end;}
+  .hero h1{
+    font-size:52px; line-height:1.08;
+    max-width:11ch;
+  }
+  .hero .lede{
+    font-size:17px; color:var(--steel);
+    margin-top:24px; max-width:42ch;
+  }
+  .hero-figures{
+    display:flex; flex-direction:column; gap:22px;
+    padding-left:24px; border-left:2px solid var(--signal);
+  }
+  .fig{display:flex; flex-direction:column;}
+  .fig .num{font-family:'Iowan Old Style','Georgia',serif; font-size:34px; font-weight:700;}
+  .fig .cap{font-size:13px; color:var(--steel); margin-top:2px;}
+
+  /* Section shared */
+  section{padding:64px 32px;}
+  .section-head{
+    display:flex; justify-content:space-between; align-items:baseline;
+    margin-bottom:36px; gap:24px; flex-wrap:wrap;
+  }
+  .section-head h2{font-size:30px;}
+  .section-head p{color:var(--steel); font-size:15px; max-width:38ch;}
+
+  /* Services */
+  .services{background:var(--panel); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .service-list{
+    display:grid; grid-template-columns:repeat(2,1fr); gap:0;
+    border-top:1px solid var(--line); border-left:1px solid var(--line);
+  }
+  .service{
+    padding:32px; border-right:1px solid var(--line); border-bottom:1px solid var(--line);
+  }
+  .service .tag{font-size:13px; color:var(--signal-dark); font-weight:600;}
+  .service h3{font-size:21px; margin-top:10px;}
+  .service p{font-size:15px; color:var(--steel); margin-top:10px; max-width:40ch;}
+
+  /* About / approach */
+  .about-inner{display:grid; grid-template-columns:1fr 1fr; gap:56px;}
+  .about-inner h2{font-size:30px; max-width:14ch;}
+  .approach-list{display:flex; flex-direction:column; gap:20px;}
+  .approach-item{display:flex; gap:16px; align-items:flex-start;}
+  .approach-item .mk{
+    width:8px; height:8px; border-radius:50%;
+    background:var(--signal); margin-top:8px; flex-shrink:0;
+  }
+  .approach-item p{font-size:15px; color:var(--steel);}
+  .approach-item strong{color:var(--ink); font-weight:600;}
+
+  /* Sectors */
+  .sectors{background:var(--ink); color:var(--paper);}
+  .sectors .section-head p{color:#b8bec9;}
+  .sector-tags{display:flex; flex-wrap:wrap; gap:10px;}
+  .sector-tags span{
+    border:1px solid #4a5468; padding:9px 16px; font-size:14px;
+  }
+
+  /* Contact */
+  .contact-inner{
+    display:grid; grid-template-columns:1fr 1fr; gap:56px;
+    background:var(--panel); border:1px solid var(--line);
+    padding:48px;
+  }
+  .contact-inner h2{font-size:30px;}
+  .contact-inner .lede{color:var(--steel); font-size:15px; margin-top:14px; max-width:36ch;}
+  .contact-list{display:flex; flex-direction:column; gap:18px; margin-top:8px;}
+  .contact-list .row{display:flex; flex-direction:column; border-top:1px solid var(--line); padding-top:14px;}
+  .contact-list .row:first-child{border-top:none; padding-top:0;}
+  .contact-list .label{font-size:12px; text-transform:uppercase; letter-spacing:0.06em; color:var(--steel);}
+  .contact-list .value{font-size:16px; margin-top:4px;}
+
+  footer{
+    padding:28px 32px; border-top:1px solid var(--line);
+    display:flex; justify-content:space-between; font-size:13px; color:var(--steel);
+    flex-wrap:wrap; gap:12px;
+  }
+
+  @media (max-width:760px){
+    .nav{padding:16px 20px;}
+    nav.links{display:none;}
+    .hero{padding:56px 20px 48px;}
+    .hero-inner{grid-template-columns:1fr; gap:36px;}
+    .hero h1{font-size:38px; max-width:none;}
+    .hero-figures{border-left:none; border-top:2px solid var(--signal); padding-left:0; padding-top:20px; flex-direction:row; flex-wrap:wrap;}
+    section{padding:48px 20px;}
+    .service-list{grid-template-columns:1fr;}
+    .about-inner{grid-template-columns:1fr;}
+    .contact-inner{grid-template-columns:1fr; padding:28px;}
+    footer{padding:24px 20px; flex-direction:column;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      <div class="brand-mark">M</div>
+      Maruti Industrial Services
+    </div>
+    <nav class="links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#sectors">Sectors</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <h1>Manpower and security you can put on shift tomorrow.</h1>
+      <p class="lede">Maruti Industrial Services supplies trained labour and professional security personnel to businesses and industrial sites across the region, with staffing handled end to end.</p>
+    </div>
+    <div class="hero-figures">
+      <div class="fig">
+        <span class="num">Faridabad</span>
+        <span class="cap">Based in Sector 3, serving Haryana &amp; NCR</span>
+      </div>
+      <div class="fig">
+        <span class="num">2 services</span>
+        <span class="cap">Labour supply and security guarding</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What we provide</h2>
+      <p>Two core services, built around reliability and quick turnaround for our clients.</p>
+    </div>
+  </div>
+  <div class="service-list wrap" style="padding:0 32px;">
+    <div class="service">
+      <span class="tag">Manpower</span>
+      <h3>Labour supply</h3>
+      <p>Skilled and unskilled workers for factories, warehouses, and industrial sites — screened, briefed, and deployed on the timeline your operation needs.</p>
+    </div>
+    <div class="service">
+      <span class="tag">Guarding</span>
+      <h3>Security guard services</h3>
+      <p>Trained security personnel for gates, premises, and facilities, with shift coverage and supervision arranged by our team.</p>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-inner">
+    <h2>How we work with clients</h2>
+    <div class="approach-list">
+      <div class="approach-item">
+        <div class="mk"></div>
+        <p><strong>Direct point of contact.</strong> One person on our side coordinates staffing, so you are never chasing an answer.</p>
+      </div>
+      <div class="approach-item">
+        <div class="mk"></div>
+        <p><strong>Personnel are verified.</strong> Every worker and guard is checked before deployment to your site.</p>
+      </div>
+      <div class="approach-item">
+        <div class="mk"></div>
+        <p><strong>Coverage without gaps.</strong> Replacements are arranged in advance so shifts are never left short.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sectors" id="sectors">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Sectors we serve</h2>
+      <p>Working across industrial and commercial settings.</p>
+    </div>
+    <div class="sector-tags">
+      <span>Manufacturing plants</span>
+      <span>Warehouses</span>
+      <span>Commercial buildings</span>
+      <span>Residential complexes</span>
+      <span>Retail premises</span>
+      <span>Construction sites</span>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-inner">
+      <div>
+        <h2>Get in touch</h2>
+        <p class="lede">For staffing requirements or to discuss a contract, reach us directly.</p>
+      </div>
+      <div class="contact-list">
+        <div class="row">
+          <span class="label">Address</span>
+          <span class="value">H No. 2160, LIG G/F, Sector 3, Faridabad, Haryana 121004</span>
+        </div>
+        <div class="row">
+          <span class="label">Phone</span>
+          <span class="value">+91 95888 59527</span>
+        </div>
+        <div class="row">
+          <span class="label">Email</span>
+          <span class="value">vikasbansal214@gmail.com</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Maruti Industrial Services. All rights reserved.</span>
+  <span>Faridabad, Haryana, India</span>
+</footer>
+
+</body>
+</html>
